@@ -1,0 +1,28 @@
+
+disk_numbers 3
+source
+auxilary
+destination
+
+     []
+    [  ]
+   [    ]
+_____________   ______________    ______________
+    source          auxilary        destination
+-------------   --------------    --------------
+
+1. check if disk_numbers == 1
+      move source to destination
+
+2. disk_numbers -= 1
+3. source | swap(auxilary, destination)
+
+_____________   ______________    ______________
+    source        destination        auxilary 
+-------------   --------------    --------------
+      move source to auxilary
+4. go back step 2
+5. swap(source, auxilary) |  destination
+_____________   ______________    ______________
+    auxilary        source          destination 
+-------------   --------------    --------------
