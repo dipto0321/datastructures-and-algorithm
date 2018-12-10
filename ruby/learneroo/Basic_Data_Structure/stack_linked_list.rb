@@ -11,6 +11,7 @@ class LinkedList
   def initialize
     @head = nil
   end
+
   # Insert At the end of the linked list
   def push(data)
     node = Node.new(data)
@@ -22,9 +23,10 @@ class LinkedList
       tail.next = node
     end
   end
+
   # Delete at last
   def pop
-  	rem_data = nil
+    rem_data = nil
     if @head.nil?
       puts 'Empty list'
     else
@@ -32,7 +34,7 @@ class LinkedList
       previous_node = nil
       if temp.next.nil?
         rem_data = temp.value
-        self.shift
+        shift
       else
         while temp.next
           previous_node = temp
@@ -45,6 +47,7 @@ class LinkedList
     end
     rem_data
   end
+
   # Delete at first
   def shift
     if @head.nil?
@@ -56,15 +59,16 @@ class LinkedList
 end
 
 def do_stuff(ar)
-	stack, res = LinkedList.new, ''
-	ar.each do |item|
-		if item == -1
-			res += stack.pop.to_s + ' '
-		else
-			stack.push(item)
-		end
-	end
-	puts res
+  stack = LinkedList.new
+  res = ''
+  ar.each do |item|
+    if item == -1
+      res += stack.pop.to_s + ' '
+    else
+      stack.push(item)
+    end
+  end
+  puts res
 end
 
 arr = [3, 5, -1, -1, 2, 7, 11, -1, -1]

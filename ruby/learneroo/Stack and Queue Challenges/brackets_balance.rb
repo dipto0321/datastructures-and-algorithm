@@ -6,8 +6,8 @@ BRACKET_PAIR = {
 def do_stuff(text)
   stack = []
   until text.empty?
-    if (BRACKET_PAIR.key?(text[0]) &&
-       BRACKET_PAIR[text[0]] != stack[-1])
+    if BRACKET_PAIR.key?(text[0]) &&
+       BRACKET_PAIR[text[0]] != stack[-1]
       stack.push(text[0])
     elsif BRACKET_PAIR.key(text[0]) == stack[-1]
       stack.pop
@@ -17,6 +17,6 @@ def do_stuff(text)
   puts stack.empty?
 end
 
-sample = [ '{}(hello)[world]','[({}{}{})([])]','([)]','(hi))(lo)(','()[]([{[[[{{()}}]]]}])[]()','[({}{}{)}([])]','()[]([{[[[{{()}}]]]}][]()','[({}[])[]()[{()]}]','[{([](){}[](){})}]' ]
+sample = ['{}(hello)[world]', '[({}{}{})([])]', '([)]', '(hi))(lo)(', '()[]([{[[[{{()}}]]]}])[]()', '[({}{}{)}([])]', '()[]([{[[[{{()}}]]]}][]()', '[({}[])[]()[{()]}]', '[{([](){}[](){})}]']
 
 sample.each { |x| do_stuff(x) }

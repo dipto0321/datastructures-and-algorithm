@@ -21,4 +21,4 @@ testfiles = [
   [201, 37, 42, 10, 23, 15, 25, 11, 6, 19, 25, 51]
 ]
 
-testfiles.each { |items| do_stuff(items[1..-1],items[0]) }
+testfiles.each { |items| do_stuff(items[1..-1], items[0]) }

@@ -5,6 +5,7 @@ class Node
     @value = value
     @next  = nil
   end
+
   def to_s
     "Node with value: #{@value}"
   end
@@ -14,6 +15,7 @@ class LinkedList
   def initialize
     @head = nil
   end
+
   # Insert At the end of the linked list
   def push(data)
     node = Node.new(data)
@@ -25,6 +27,7 @@ class LinkedList
       tail.next = node
     end
   end
+
   # Insert At the front of the linked list
   def unshift(data)
     node = Node.new(data)
@@ -39,13 +42,12 @@ class LinkedList
     if temp.nil?
       puts 'List is empty. Use append or unshift for insertion'
     else
-      until temp.value == prev_data
-        temp = temp.next
-      end
+      temp = temp.next until temp.value == prev_data
       node.next = temp.next
       temp.next = node
     end
   end
+
   # All deletion methods
   # Delete at last
   def pop
@@ -55,7 +57,7 @@ class LinkedList
       temp = @head
       previous_node = nil
       if temp.next.nil?
-        self.shift
+        shift
       else
         while temp.next
           previous_node = temp
@@ -66,6 +68,7 @@ class LinkedList
       end
     end
   end
+
   # Delete at first
   def shift
     if @head.nil?
@@ -74,6 +77,7 @@ class LinkedList
       @head = @head.next
     end
   end
+
   # delete a data from
   def delete_value(data)
     temp = @head
@@ -85,18 +89,19 @@ class LinkedList
         previous_node = temp
         temp = temp.next
       end
-      # if key was not present in linked list 
+      # if key was not present in linked list
       if temp.nil?
         puts 'No data found!'
         return
       end
       if previous_node.nil?
-        self.shift
+        shift
       else
         previous_node.next = temp.next
       end
     end
   end
+
   # Show all data
   def list_show
     temp = @head
@@ -105,14 +110,13 @@ class LinkedList
       temp = temp.next
     end
   end
-  #Miscellaneous Methods
+
+  # Miscellaneous Methods
   def min
     temp = @head
     @min = temp.value
     while temp
-      if @min > temp.value
-        @min = temp.value
-      end
+      @min = temp.value if @min > temp.value
       temp = temp.next
     end
     @min
@@ -120,7 +124,8 @@ class LinkedList
 end
 
 def do_stuff(ar)
-  stack, res = LinkedList.new, ""
+  stack = LinkedList.new
+  res = ''
   ar.each do |item|
     if item == -1
       stack.pop

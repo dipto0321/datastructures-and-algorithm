@@ -14,8 +14,6 @@ def do_stuff(a, b)
   puts('')
 end
 
-
-
 input_test = [[1, 3], [1, 2], [2, 3], [2, 1], [3, 2]]
 
 input_test.each { |i| do_stuff(i[0], i[1]) }

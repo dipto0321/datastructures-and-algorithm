@@ -18,7 +18,8 @@ class Stack
 end
 
 def do_stuff(ar)
-  stack, res = Stack.new, ""
+  stack = Stack.new
+  res = ''
   ar.each do |item|
     if item == -1
       stack.pop

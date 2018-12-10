@@ -1,8 +1,9 @@
 def do_stuff(ar, k)
-  i, output = 0, ''
-  while i < ar.length-(k-1)
-    output += ar[i..i+(k-1)].max.to_s + ' '
-    i+=1
+  i = 0
+  output = ''
+  while i < ar.length - (k - 1)
+    output += ar[i..i + (k - 1)].max.to_s + ' '
+    i += 1
   end
   puts output
 end
