@@ -1,0 +1,74 @@
+
+1 2
+2 0
+3 0 1 4 5
+4 2
+3 2
+2
+
+visited = [0]
+path = [0] {connection 1 -> 2}
+
+visited = [0,1]
+path = [0,1] {connection 2 -> 0}
+
+visited = [0,1,2]
+path = [0,1,2] {connection 3,0,1,4,5}
+
+visited = [0,1,2,3]
+path = [0,1,2,3] {connection 4,2}
+
+visited = [0,1,2,3,4]
+path = [0,1,2,3,4] {connection 2}
+
+1 6
+2 0 3 4
+3 1
+6 1 2
+1 5 6
+4
+4 3 0
+
+visited = [0]
+path = [0] { connections 1,6}
+
+visited = [0,1]
+path = [0,1] { connections 2,0,3,4}
+
+visited = [0,1,2]
+path = [0,1,2] { connections 3,1}
+
+visited = [0,1,2,3]
+path = [0,1,2,3] { connections 6,1,2}
+
+visited = [0,1,2,3,6]
+path = [0,1,2,3,6] { connections 4,3,0}
+
+visited = [0,1,2,3,6,4]
+path = [0,1,2,3,6,4]
+
+1 6
+2 0 3 4
+7 3 1
+6 1 2
+1 5 7
+4 6
+3 0 5
+4 2
+
+visited = [0]
+path = [0] { connections 1,6}
+
+visited = [0,1]
+path = [0,1] { connections 2, 0, 3, 4}
+
+visited = [0,1,2]
+path = [0,1,2] { connections 7, 3, 1}
+
+
+visited = [0,1,2,7]
+path = [0,1,2,7] { connections 4, 2 }
+
+visited = [0,1,2,7,4]
+path = [0,1,2,7,4]
+
