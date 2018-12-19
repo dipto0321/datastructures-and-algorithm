@@ -15,13 +15,11 @@ end
 
 
 def visit(graphs, node, visited = [])
-  if node
-    unless visited.include?(node.value)
-      visited.push(node.value)
-      node.adjacents.each { |nd| visit(graphs, graphs[nd], visited ) }
-    end
-    visited
+  unless visited.include?(node.value)
+    visited.push(node.value)
+    node.adjacents.each { |nd| visit(graphs, graphs[nd], visited ) }
   end
+  visited
 end
 
 def do_stuff(grid)
