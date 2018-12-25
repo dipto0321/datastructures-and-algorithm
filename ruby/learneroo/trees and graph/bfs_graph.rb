@@ -13,29 +13,35 @@ def create_node(arr, id)
   node
 end
 
-
-def visit(graphs, node, visited = [])
-  # todo
+def bfs(graphs, node, queue = [], visited = [])
+  unless visited.include?(node.value)
+    node.adjacents.each { |item| queue.push(item) unless queue.include?(item) }
+    visited.push(node.value)
+    until queue.empty?
+      shifted = queue.shift
+      bfs(graphs, graphs[shifted], queue, visited)
+    end
+    visited
+  end
 end
 
 def do_stuff(grid)
   graphs = []
   grid.each_with_index { |item, index| graphs.push(create_node(item, index)) }
-  puts visit(graphs, graphs[0]).join(' ')
+  puts bfs(graphs, graphs[0]).join(' ')
 end
 grid = [[2], [4], [5, 0, 3], [5, 2], [1, 5], [4, 2, 3]]
 
 do_stuff(grid)
 
-
-#boilerplate code
+# boilerplate code
 # t = gets.to_i
 # for c in 1..t do
-# 	m = gets.to_i
-# 	grid = []
-# 	(0...m).each do |r|
-# 		grid[r] = gets.strip.split.map {|i| i.to_i}
-# 	end
+#   m = gets.to_i
+#   grid = []
+#   (0...m).each do |r|
+#     grid[r] = gets.strip.split.map {|i| i.to_i}
+#   end
 #   print grid
 #   puts ''
 # end
