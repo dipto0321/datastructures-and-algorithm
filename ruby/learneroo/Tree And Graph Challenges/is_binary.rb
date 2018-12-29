@@ -6,6 +6,10 @@ class Node
     @left  = nil
     @right = nil
   end
+
+  def to_s
+    "#{value} #{left} #{right}".strip
+  end
 end
 
 def array_to_node(arr, index = 0)
@@ -17,24 +21,21 @@ def array_to_node(arr, index = 0)
   root_node
 end
 
-def binary_tree?(node)
-  status = [nil, nil]
-  temp = node
-  until temp.left.nil?
-    status[0] = temp.value > temp.left.value
-    temp = temp.left
-  end
-  temp = node
-  until temp.right.nil?
-    status[1] = temp.value < temp.right.value
-    temp = temp.right
-  end
-  status[0] && status[1]
+def BST_helper(node, mini = - 999, maxi = 999)
+  return true if node.nil?
+
+  return false if node.value < mini || node.value > maxi
+
+  BST_helper(node.left, mini, node.value - 1) && BST_helper(node.right, node.value + 1, maxi)
+end
+
+def is_BST?(node)
+  BST_helper(node)
 end
 
 def do_stuff(ar)
-  converted_tree = array_to_node(ar)
-  puts binary_tree?(converted_tree)
+  tree = array_to_node(ar)
+  puts is_BST?(tree)
 end
 
 inputs = [
@@ -47,4 +48,4 @@ inputs = [
   [21, 11, 26, 5, 14, 23, 30, 2, 8, 13, 16, 0, 0, 0, 0]
 ]
 
-inputs.each { |el| puts do_stuff(el) }
+inputs.each { |el| do_stuff(el) }

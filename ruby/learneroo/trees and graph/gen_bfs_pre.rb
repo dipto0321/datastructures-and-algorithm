@@ -7,6 +7,7 @@ class Node
     @right = nil
   end
 end
+
 def binary_tree_insertion(root, node)
   if node.value < root.value
     root.left.nil? ? root.left = node : binary_tree_insertion(root.left, node)
