@@ -1,3 +1,0 @@
-1. Both tree max height diffrence should be 1
-2. Each of the subtree should also be balanced
-
