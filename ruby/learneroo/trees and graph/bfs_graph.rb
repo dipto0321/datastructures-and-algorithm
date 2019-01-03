@@ -33,15 +33,3 @@ end
 grid = [[2], [4], [5, 0, 3], [5, 2], [1, 5], [4, 2, 3]]
 
 do_stuff(grid)
-
-# boilerplate code
-# t = gets.to_i
-# for c in 1..t do
-#   m = gets.to_i
-#   grid = []
-#   (0...m).each do |r|
-#     grid[r] = gets.strip.split.map {|i| i.to_i}
-#   end
-#   print grid
-#   puts ''
-# end
