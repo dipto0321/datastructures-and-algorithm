@@ -28,7 +28,6 @@ def is_connected?(grid)
   puts visit.length == grid.length
 end
 
-
 inputs = [
   "2
   4
@@ -71,6 +70,6 @@ inputs = [
   3
   4"
 ]
-grids = [[[2],[4],[0, 5, 3],[5, 2],[5, 1],[4, 2, 3]]]
+grids = [[[2], [4], [0, 5, 3], [5, 2], [5, 1], [4, 2, 3]]]
 
 is_connected?(grids)
