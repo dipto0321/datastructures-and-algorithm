@@ -1,0 +1,115 @@
+All task step by steps:
+
+     0   1   2
+   -------------
+ 0 | 9 | 8 | 5 |
+ 1 | 5 | 6 | 3 |
+ 2 | 8 | 4 | 1 |
+   -------------
+
+1. Need to find out surrounding data means top, right, down, left
+    suppose NxN Grids 
+    top = [row - 1][col], right = [row][col + 1], bottom = [row + 1][col], left = [row][col - 1]
+
+    [0][0] = no[left, top] , have [right, down]
+    [0][1] = no[top] , have [left,right, down]
+    [0][2] = no[top, right] , have [left, down]
+
+    [1][0] = no[left] , have [top,right, down]
+    [1][1] = no[] , have [top,left,right, down] [Middle]
+    [1][2] = no[right] , have [top, left, down]
+
+    [2][0] = no[left, down] , have [top, right]
+    [2][1] = no[down] , have [top, left,right, ]
+    [2][2] = no[right, down] , have [top, left]
+
+    Some analysis
+      a. row[0] has no top that means this a top edge.
+      b. row[2] has no down that means this a down edge.
+      c. col[0] has no left that means this a left edge.
+      d. col[2] has no right that means this a right edge.
+
+  cell_info:
+    cell_data = [row][col]
+    surroundings = {t: 0, r: 0, b: 0, l: 0}
+    ruled_by = 0
+    
+2. peakes = []
+
+3. peaks_rules: All surrounding's value should be less then cell_data
+4. ruled_value: Max value from surounding's values is higher then cell_data
+
+
+equetions:
+    1. ruled_by(cell_data, surroundings.values.max)
+
+helpers: 
+  func ruled_by(cell_data, candidate):
+    cell_data < candidate ? candidate : 0
+
+     0   1   2
+   -------------
+ 0 | 9 | 8 | 5 |
+ 1 | 5 | 6 | 3 |
+ 2 | 8 | 4 | 1 |
+   -------------
+
+cell_[0][0]_info:
+    cell_data = 9
+    surroundings = {t: 0, r: 8, b: 5, l: 0}
+    ruled_by = 0
+
+cell_[0][1]_info:
+    cell_data = 8
+    surroundings = {t: 0, r: 5, b: 6, l: 9}
+    ruled_by = 9
+
+cell_[0][2]_info:
+    cell_data = 5
+    surroundings = {t: 0, r: 0, b: 3, l: 8}
+    ruled_by = 8
+
+     0   1   2
+   -------------
+ 0 | 9 | 8 | 5 |
+ 1 | 5 | 6 | 3 |
+ 2 | 8 | 4 | 1 |
+   -------------
+
+cell_[1][0]_info:
+    cell_data = 5
+    surroundings = {t: 9, r: 6, b: 8, l: 0}
+    ruled_by = 9
+
+cell_[1][1]_info:
+    cell_data = 6
+    surroundings = {t: 8, r: 3, b: 4, l: 5}
+    ruled_by = 8
+
+cell_[1][2]_info:
+    cell_data = 3
+    surroundings = {t: 5, r: 0, b: 1, l: 6}
+    ruled_by = 6
+
+     0   1   2
+   -------------
+ 0 | 9 | 8 | 5 |
+ 1 | 5 | 6 | 3 |
+ 2 | 8 | 4 | 1 |
+   -------------
+
+cell_[2][0]_info:
+    cell_data = 8
+    surroundings = {t: 5, r: 4, b: 0, l: 0}
+    ruled_by = 0
+
+cell_[2][1]_info:
+    cell_data = 4
+    surroundings = {t: 6, r: 1, b: 0, l: 8}
+    ruled_by = 8
+
+cell_[2][2]_info:
+    cell_data = 1
+    surroundings = {t: 3, r: 0, b: 0, l: 4}
+    ruled_by = 4
+
