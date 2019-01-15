@@ -1,6 +1,6 @@
 
 
-path = [[0, 0]]
+path = []
 grid = [[0, 0, 0, 0, 0],
         [0, 1, 0, 1, 0],
         [0, 1, 0, 1, 1],
@@ -19,7 +19,9 @@ def maze_search(x, y):
         return False
 
     if [x, y] not in path:
-        path.append([x, y])
+        return False
+
+    path.append([x, y])
     # mark as visited
     grid[x][y] = 'v'
 

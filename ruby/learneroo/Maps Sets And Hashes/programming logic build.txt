@@ -1,0 +1,13 @@
+======== SET ==========
+1 2 3 1 5 6 7 8 5 2
+
+check = 2 is this on hold? yes [if yes push it on duplicate else push on hold]
+hold = [1,2,3,5,6,7,8]
+duplicate = [1 5 2]
+
+85 105 90 275 30 100 275 110 125 130 275 10 20 30 45 50 275 65 70 111
+
+check = _ is this on hold? _ [if yes push it on duplicate else push on hold]
+hold = [85 105 90 275 30 100 110 125 130 10 20 45 50 65 70 111]
+duplicate = [275 275 30 275]
+
