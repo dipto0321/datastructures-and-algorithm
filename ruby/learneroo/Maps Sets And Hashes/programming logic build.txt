@@ -11,3 +11,15 @@ check = _ is this on hold? _ [if yes push it on duplicate else push on hold]
 hold = [85 105 90 275 30 100 110 125 130 10 20 45 50 65 70 111]
 duplicate = [275 275 30 275]
 
+============ MAP ==============
+
+1 2 3 1 5
+
+number_book = {}
+
+add keys and set 1 for value if n is not in number_book.keys
+add 1 with key value if the number is already on keys 
+
+4376 -345 -345 4376 -345 84945 4376 -345 -26509 4376 84945 84945 -26509 896341 4376
+
+number
