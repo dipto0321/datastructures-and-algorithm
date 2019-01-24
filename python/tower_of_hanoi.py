@@ -9,4 +9,4 @@ def tower(disk_numbers, source, auxilary, destination):
     return
 
 
-# tower(6, '1', '2', '3')
+tower(6, '1', '2', '3')
