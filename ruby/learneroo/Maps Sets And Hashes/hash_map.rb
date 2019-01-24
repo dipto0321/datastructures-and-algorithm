@@ -6,7 +6,6 @@ def array_to_hash_set(ar)
   converted_hash_set
 end
 
-
 def do_stuff(ar)
   prime_numbers_set = array_to_hash_set($prime_numbers_10k)
   prime_numbers_set.keys.each do |k|
@@ -29,4 +28,3 @@ inputs.each { |ar| do_stuff(ar) }
 
 # do_stuff(ar1)
 # do_stuff(ar2)
-
