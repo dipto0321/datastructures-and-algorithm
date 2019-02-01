@@ -10,8 +10,11 @@ end
 
 t = gets.to_i
 (1..t).each do |_i|
-  n = gets
-  ar = gets.strip.split.map { |i| i.to_i if i.scan(/^\d+$/).any? }
-  ar.delete(nil)
-  do_stuff(ar)
+  n = gets.to_i
+  num_ar = []
+  (1..n).each do |_j|
+    inputs = gets.strip.split
+    num_ar.push(inputs[0].to_i)
+  end
+  do_stuff(num_ar)
 end
