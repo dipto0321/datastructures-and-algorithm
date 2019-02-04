@@ -20,7 +20,7 @@ end
 
 inputs = [[4, 5, 3, 9, 1], [2, 10, 3, 7, 9, 4, 6, 12, 8], [45, 25, 46, 48, 28, 6, 13, 5, 36, 44, 7, 4, 11, 30, 24, 34, 15, 31, 38, 49 ]]
 inputs.each do |ar| 
-  quicksort(ar,0, ar.size-1 )
+  quicksort(ar,0, ar.size-1)
   puts ar.join(' ')
 end
 # partition(inputs,0, inputs.size-1 )
