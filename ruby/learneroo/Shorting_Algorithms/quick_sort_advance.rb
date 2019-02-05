@@ -1,6 +1,5 @@
 def partition(ar, low, high)
   pivot = ar[high]
-
   i = low - 1
   j = low
   while j <= high - 1
