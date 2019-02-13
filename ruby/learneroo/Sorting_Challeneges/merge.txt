@@ -7,7 +7,9 @@ Example Array: 38 27 43 3 9 82 10
 
 ************* Split 1 *************
 
-Before merging: 38 27
+Before merging Divided Array: 38 27
+left Array : 38
+right Array : 27
 Initial Merging: 27 27
 Merging rest left element: 27 38
 Final Stage: 27 38
@@ -16,7 +18,9 @@ Final Stage: 27 38
 
 ************* Split 2 *************
 
-Before merging: 43 3
+Before merging Divided Array: 43 3
+left Array : 43
+right Array : 3
 Initial Merging: 3 3
 Merging rest left element: 3 43
 Final Stage: 3 43
@@ -25,7 +29,9 @@ Final Stage: 3 43
 
 ************* Split 3 *************
 
-Before merging: 38 27 43 3
+Before merging Divided Array: 38 27 43 3
+Left Array: 27 38
+Right Array: 3 43
 Initial Merging: 3 27 43 3
 Initial Merging: 3 27 43 3
 Initial Merging: 3 27 38 3
@@ -36,7 +42,9 @@ Final Stage: 3 27 38 43
 
 ************* Split 4 *************
 
-Before merging: 9 82
+Before merging Divided Array: 9 82
+Left Array: 9
+Right Array: 82
 Initial Merging: 9 82
 Merging rest right element: 9 82
 Final Stage: 9 82
@@ -45,7 +53,9 @@ Final Stage: 9 82
 
 ************* Split 5 *************
 
-Before merging: 9 82 10
+Before merging Divided Array: 9 82 10
+Left Array: 9 82
+Right Array: 10
 Initial Merging: 9 82 10
 Initial Merging: 9 10 10
 Merging rest left element: 9 10 82
@@ -55,7 +65,9 @@ Final Stage: 9 10 82
 
 ************* Split 6 *************
 
-Before merging: 38 27 43 3 9 82 10
+Before merging Divided Array: 38 27 43 3 9 82 10
+Left Array: 3 27 38 43
+Right Array: 9 10 82
 Initial Merging: 3 27 43 3 9 82 10
 Initial Merging: 3 9 43 3 9 82 10
 Initial Merging: 3 9 10 3 9 82 10
