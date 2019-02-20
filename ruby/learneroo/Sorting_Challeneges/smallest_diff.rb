@@ -1,6 +1,6 @@
 def do_stuff(ar)
   ar.sort!
-  min_diff = 99999999999999999
+  min_diff = 99_999_999_999_999_999
   min_pair = []
   ar.each_with_index do |element, index|
     comp_element = ar[index - 1]
@@ -11,8 +11,7 @@ def do_stuff(ar)
     end
   end
 
-  puts min_pair.join(' ');
+  puts min_pair.join(' ')
 end
 
-
-do_stuff([-20, -3916237, -357920, -3620601, 7374819, -7330761, 30, 6246457, -6461594, 266854]);
+do_stuff([-20, -3_916_237, -357_920, -3_620_601, 7_374_819, -7_330_761, 30, 6_246_457, -6_461_594, 266_854])
