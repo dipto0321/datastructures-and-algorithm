@@ -1,10 +1,6 @@
 import numpy as np
 
 
-def new_array(exclud, el):
-    if el is not exclud:
-        return el
-
 
 def multy_array(_items):
     res = []
