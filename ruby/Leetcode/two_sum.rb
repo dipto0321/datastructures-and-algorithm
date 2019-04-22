@@ -1,4 +1,6 @@
 # Brute force solution
+# Runtime: 3524 ms
+# Memory Usage: 9.6 MB
 
 # def two_sum(arr, target)
 #   (0...arr.size).each do |_i|
@@ -8,11 +10,15 @@
 #   end
 # end
 
+# Runtime: 36 ms
+# Memory Usage: 10 MB
+
 def two_sum(nums, target)
   nums_hash = {}
   nums.each_with_index do |val, i|
     complement = target - nums[i]
-    return [i, nums_hash[complement]] if nums_hash.key?(complement)
+    return [nums_hash[complement], i] if nums_hash.key?(complement)
+
     nums_hash[val] = i
   end
 end
