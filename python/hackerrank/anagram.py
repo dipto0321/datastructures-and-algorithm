@@ -1,7 +1,7 @@
 from collections import Counter
 
 
-def anagram(s):
+def anagram(s: str):
     l = len(s)
     if l % 2 == 1:
         return - 1
@@ -23,5 +23,3 @@ print(anagram("mnop"))
 print(anagram("xyyx"))
 print(anagram("xaxbbbxx"))
 print(anagram("fdhlvosfpafhalll"))
-
-fdhlvosfpafhalll
